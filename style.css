@@ -1,40 +1,93 @@
+/* 
+
+------TYPOGRAPHY------
+FONT SIZES 
+1rem / 1.5rem / 2rem / 2.5rem 
+
+FONT WEIGHTS
+400 / 500 / 600 / 700
+
+LINE HEIGHTS 
+1.2 / 1.6 
+
+LETTER SPACING 
+-0.02em / -0.01em / 0.05em
+
+FONT FAMILY 
+PRIMARY: 'Inter', Arial, sans-serif 
+SECONDARY: 'Montserrat', Arial, sans-serif 
+
+------COLORS------
+PRIMARY 
+Base color: #1e90ff (Electric Blue);
+Tint: #63b3ed (Sky Blue);
+Shade: #1c7ed6 (Deep Blue);
+
+GRAY SCALE 
+Base color: #cccccc (Silver);
+Tint: #f0f0f0 (Light Gray);
+Shade: #222222 (Charcoal);
+Shade (Deepest): #000000 (Pitch Black);
+
+
+*/
+
+
+
+
+
+
+
 :root {
-    --primary-color: #1e90ff;
-    --text-color: #ccc;
-    --heading-color: #f0f0f0;
+    /*PRIMARY*/
+    --primary-500: #1e90ff;
+    --primary-400: #63b3ed;
+    --primary-700: #1c7ed6;
+
+    /*Gray scale*/
+    --gray-100: #f0f0f0;
+    --gray-300: #cccccc;
+    --gray-700: #222222;
+    --gray-900: #000000;
+
 }
 
 
 body {
-    background-color: black;
+    background-color: var(--gray-900);
     color: white;
-    font-family: Arial, sans-serif;
+    font-family: 'Inter', Arial, sans-serif;
     line-height: 1.6;
 }
 
 h1 {
-    color: var(--primary-color); 
+    color: var(--gray-300); 
     font-size: 2.5rem;
     font-weight: 700;
-    letter-spacing: 0.02em;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    font-family: 'Montserrat', Arial, sans-serif;
 }
 
 h2 {
     font-size: 2rem; 
     font-weight: 600;
-    color: var(--heading-color);
-    letter-spacing: 0.015em;
+    color: var(--primary-500);
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+    font-family: 'Montserrat', Arial, sans-serif;
 }
+
 
 h3 {
  font-size: 1.5rem;
  font-weight: 500;
- color: var(--heading-color);
- letter-spacing: 0.01em;
+ color: var(--gray-100);
+ line-height: 1.2;
 }
 
 p {
-    color: var(--text-color);
+    color: var(--gray-300);
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.6;
@@ -48,6 +101,10 @@ a {
 
 a:hover {
    text-decoration: underline;
+}
+
+a:focus {
+    outline: 2px solid var(--primary-500);
 }
 
 section {
@@ -67,10 +124,11 @@ nav a {
     letter-spacing: 0.05em;
     padding: 0.5rem 1rem;
     display: inline-block;
+    transition: all 0.2s ease;
 }
 
 nav a:hover {
-    color: #63b3ed;
+    color: var(--primary-400);
     background-color: #111;
 }
 
@@ -80,6 +138,7 @@ nav a:hover {
     gap: 2rem;
     align-items: center;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 #hero img {
@@ -102,7 +161,7 @@ h1, h2, h3 {
 }
 
 main {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
     padding: 0 1rem;
 }
