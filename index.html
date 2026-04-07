@@ -5,41 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
+
 <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#projects">Projects</a></li>
-            </ul>
+        <nav class="nav">
+            <div class="container nav-container">
+                <a href="#" class="nav-logo">DVK</a>
+                <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+                    &#9776;
+                </button>
+                <ul class="nav-list">
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                </ul>
+            </div>
         </nav>
     </header>
 
-    <main>
-        <section id="hero">
+    <main class="container">
+        <section id="hero" class="hero">
+            <div class="hero-content">
             <img src="images/developer.png" alt="Illustration representing a web and game developer">
-              <header>
+              <div class="hero-text">
                 <h1>Need a Website or Video Game Development Services?</h1>
                 <p>It's my mission to share my skills and growing expertise with individuals looking to
                 level up their creative visions through game design or web development solutions. 
                 </p>
-             </header>
+             </div>
+             </div>
         </section>
 
         <section id="about">
-            <h2>About Me</h2>
-            <p>Hi! I am an up and coming but passionate web developer and (soon to be) game developer
-                with a strong desire to learn and grow in the field. I am dedicated to honing my skills 
-                and expanding my knowledge to create innovative and engaging digital experiences. 
-                I am committed to delivering high-quality work and continuously improving my craft to meet 
-                the needs of clients and users alike.
-            </p>
+                <h2>About Me</h2>
+                <p>Hi! I am an up and coming but passionate web developer and (soon to be) game developer
+                    with a strong desire to learn and grow in the field. I am dedicated to honing my skills 
+                    and expanding my knowledge to create innovative and engaging digital experiences. 
+                    I am committed to delivering high-quality work and continuously improving my craft to meet 
+                    the needs of clients and users alike.
+                </p>
         </section>
 
         <section id="contact">
@@ -71,5 +81,18 @@
     <footer>
         <p>&copy; 2026 Dale Vincent L. Kakilala. All Rights Reserved.</p>
     </footer>
+
+    
+<script>
+const navToggle = document.querySelector('.nav-toggle');
+const navList = document.querySelector('.nav-list');
+
+navToggle.addEventListener('click', () => {
+    const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+    navToggle.setAttribute('aria-expanded', !isExpanded);
+    navList.classList.toggle('active');
+});
+</script>
+
 </body>
 </html>
