@@ -33,7 +33,7 @@
         <section id="hero" class="hero">
             <div class="hero-content">
             <img src="images/developer.png" alt="Illustration representing a web and game developer">
-              <div class="hero-text">
+              <div class="hero-text flex-column gap-md">
                 <h1>Need a Website or Video Game Development Services?</h1>
                 <p>It's my mission to share my skills and growing expertise with individuals looking to
                 level up their creative visions through game design or web development solutions. 
@@ -62,14 +62,14 @@
         <section id="projects">
             <h2>Projects</h2>
 
-            <article>
+            <article class="project-card">
                 <h3>Chuck Norris Joke Generator</h3>
                 <p>This is a simple web application that generates random 
                     jokes about Chuck Norris (RIP)</p>
                 <a href="https://dvkak1.github.io/joke-generator/">View Project</a>
             </article>
 
-            <article>
+            <article class="project-card">
                <h3>Pong</h3>
                <p>A classic arcade game coded using only JavaScript.</p>
                <a href="https://dvkak1.github.io/pong/">View Project</a>
@@ -89,7 +89,7 @@ const navList = document.querySelector('.nav-list');
 
 navToggle.addEventListener('click', () => {
     const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
-    navToggle.setAttribute('aria-expanded', !isExpanded);
+    navToggle.setAttribute('aria-expanded', isExpanded);
     navList.classList.toggle('active');
 });
 </script>
